@@ -1,46 +1,46 @@
 version: '3'
 
 services:
-    php:
-        container_name: php
-        build:
-            context: ./docker/php/
-            dockerfile: ./Dockerfile
-        restart: always
-        ports:
-            - 8000:80
-        volumes:
-            - ./php/:/var/www/html/
-        networks:
-            - wordpress
+  wordpress:
+    image: wordpress:latest
+    ports:
+      - "8000:80"
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: root
+      WORDPRESS_DB_NAME: wordpress
+    networks:
+      - wordpress
 
-    db:
-        container_name: database
-        image: mysql:8.0.29
-        restart: always
-        environment:
-            MYSQL_ROOT_PASSWORD: root
-            MYSQL_DATABASE: wordpress
-        ports:
-            - 3306
-        volumes:
-            - db-data:/var/lib/mysql
-        networks:
-            - wordpress
+  db:
+    container_name: database
+    image: mysql:8.0.29
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: wordpress
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - wordpress
 
-    phpmyadmin:
-        container_name: phpmyadmin
-        image: phpmyadmin:5.2.0
-        restart: always
-        ports:
-            - 8001:80
-        environment:
-            - PMA_HOST=db
-        networks:
-            - wordpress
+  phpmyadmin:
+    container_name: phpmyadmin
+    image: phpmyadmin:5.2.0
+    restart: always
+    ports:
+      - "8001:80"
+    environment:
+      PMA_HOST: db
+    networks:
+      - wordpress
 
 volumes:
-    db-data:
+  db-data:
 
 networks:
-    wordpress:
+  wordpress:

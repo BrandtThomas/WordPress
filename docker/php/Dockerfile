@@ -5,7 +5,7 @@ RUN echo "ServerName 127.0.0.1" >> /etc/apache2/apache2.conf
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions intl pdo_mysql
+    install-php-extensions intl pdo_mysql mysqli
 
 RUN apt-get update
 
