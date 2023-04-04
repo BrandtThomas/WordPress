@@ -41,9 +41,9 @@ ATTENTION !
 - Sécurisez votre site, prévenez-vous du brute force et changez l'URL de votre accès à l'espace administrateur en utilisant des plugins
 
 ## Deliverables
-Le code en php
-La BDD
-La sauvegarde des données importantes
+- Le code en php
+- La BDD
+- La sauvegarde des données importantes
 
 ## Deadline
 
