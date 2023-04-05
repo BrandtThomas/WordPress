@@ -7,10 +7,10 @@ Vous leur proposez d'utiliser Wordpress qui vous permettra de réaliser un thèm
 
 Le cinéma souhaite avoir un site assez simple :
 
-Une page d'accueil avec les films actuellements à l'affiche
-Une navbar avec la possibilité de naviguer vers les catégories de films, les prochaines sorties ainsi qu'une page de contact
-Les utilisateurs pourront commenter et donner leur avis sur les films
-Une page "site en construction" pour la maintenance du site
+- Une page d'accueil avec les films actuellements à l'affiche
+- Une navbar avec la possibilité de naviguer vers les catégories de films, les prochaines sorties ainsi qu'une page de contact
+- Les utilisateurs pourront commenter et donner leur avis sur les films
+- Une page "site en construction" pour la maintenance du site
 
 La totalité des informations et des images est fournie. 
 
