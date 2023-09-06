@@ -11,8 +11,7 @@ services:
       WORDPRESS_DB_USER: root
       WORDPRESS_DB_PASSWORD: root
       WORDPRESS_DB_NAME: wordpress
-    networks:
-      - wordpress
+
 
   db:
     container_name: database
@@ -25,11 +24,7 @@ services:
       - "3306:3306"
     volumes:
       - db-data:/var/lib/mysql
-    networks:
-      - wordpress
 
 volumes:
   db-data:
 
-networks:
-  wordpress:
